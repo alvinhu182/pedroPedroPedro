@@ -1,0 +1,105 @@
+body {
+    background: #161616;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Evitar rolagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.spinner {
+    background: #f5dad8;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 400px;
+    aspect-ratio: 1;
+    animation: rotate 6s linear infinite;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    display: block;
+    width: 105%;
+    animation: bounce .2s linear infinite alternate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-5%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pular {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        color: #ff0000;
+    }
+    25% {
+        color: #00ff00;
+    }
+    50% {
+        color: #0000ff;
+    }
+    75% {
+        color: #ffff00;
+    }
+    100% {
+        color: #ff00ff;
+    }
+}
+
+/* @keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
+/* .girar {
+    animation: girar 2s linear infinite;
+} */
+
+.pular {
+    display: inline-block;
+    animation: pular 0.2s infinite, girar 0.2s linear infinite;
+    position: absolute; /* Permitir posicionamento absoluto */
+}
+
+.vibrante {
+    animation: changeColor 2s infinite;
+    font-weight: bold;
+}
+
+.container {
+    position: relative; /* Container relativo ao body */
+    width: 100%;
+    height: 100%;
+}
+
