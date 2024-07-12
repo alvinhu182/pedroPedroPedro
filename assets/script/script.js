@@ -16,3 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
         moveRandomly(element); // Mover aleatoriamente na inicialização
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.querySelector('audio'); // Selecionar o elemento <audio>
+    const toggleButton = document.getElementById('toggleButton');
+
+    // Adicionar evento de clique ao botão
+    toggleButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play(); // Iniciar música se estiver pausada
+            toggleButton.textContent = 'Parar Música';
+        } else {
+            audio.pause(); // Pausar música se estiver tocando
+            toggleButton.textContent = 'Iniciar Música';
+        }
+    });
+});
